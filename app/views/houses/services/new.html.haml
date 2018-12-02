@@ -1,0 +1,23 @@
+= form_for @service, url: house_services_path(@house) do |f|
+  .row
+    .col-md-6
+      .form-group
+        = f.label :service_type_id
+        = f.select :service_type_id, options_for_select(service_types_collection), {}, class: 'form-control'
+      .form-group
+        = f.label :price
+        = f.number_field :price, step: 0.1, class: 'form-control'
+      .form-group
+        = f.label :use_price_as_default_fee
+        = f.check_box :use_price_as_default_fee, { class: 'form-control' }
+      .form-group
+        = f.label :active_from
+        = f.date_select :active_from, class: 'form-control'
+      .form-group
+        = f.label :relevant
+        = f.check_box :relevant, { class: 'form-control' }
+      .form-group
+        = f.label :inactive_from
+        = f.date_select :inactive_from, class: 'form-control'
+      .form-group
+        = f.submit 'Add', class: 'btn btn-success'

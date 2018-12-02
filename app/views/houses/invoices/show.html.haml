@@ -1,0 +1,10 @@
+%h1 Service records
+
+%table.table
+  %tbody
+    - @invoice.service_records.each do |service_record|
+      %tr
+        %td= service_record.service
+        %td= service_record.cached_price
+        %td= service_record.total
+        %td= service_record.value

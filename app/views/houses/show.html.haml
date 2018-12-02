@@ -1,0 +1,32 @@
+= link_to 'Add service', new_house_service_path(@house), class: 'btn btn-info'
+= link_to 'Generate montyly report', new_house_invoice_path(@house), class: 'btn btn-success'
+
+%h1 Services
+%table.table
+  %thead
+    %th Name
+    %th Price
+    %th Active from
+    %th InActive from
+    %th Used as default price
+  %tbody
+    - @house.services.each do |service|
+      %tr
+        %td= service.service_type.name
+        %td= service.price
+        %td= service.active_from
+        %td
+          - if service.relevant?
+            %span -
+          - else
+            = service.inactive_from
+        %td= service.use_price_as_default_fee
+
+%h1 Invoices
+%table.table
+  %tbody
+    - @house.invoices.each do |invoice|
+      %tr
+        %td= link_to "#{invoice.month}/#{invoice.year}", [@house, invoice]
+        %td= invoice.total
+        %td= invoice.status

@@ -1,0 +1,6 @@
+- title 'Dashboard'
+
+= link_to 'Add house', new_house_path, class: 'btn btn-success'
+
+- House.all.each do |house|
+  %p= link_to house.address, house

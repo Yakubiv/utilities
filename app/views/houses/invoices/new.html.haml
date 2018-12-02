@@ -1,0 +1,18 @@
+%h1 Generating invoice
+
+= form_for [@house, @invoice], method: :post do |f|
+  .row
+    .col-md-6
+      = f.fields_for :service_records do |ff|
+        = ff.hidden_field :service_id
+        = ff.hidden_field :house_id
+        - if ff.object.service.use_price_as_default_fee
+          = ff.hidden_field :value, value: 0
+        %table.table
+          %body
+            %tr
+              %td= ff.object.service
+              %td= ff.number_field :cached_price, class: 'form-control'
+              %td= ff.number_field :value, disabled: ff.object.service.use_price_as_default_fee, class: 'form-control'
+              %td= ff.number_field :total, class: 'form-control'
+  = f.submit 'Add invoice', class: 'btn btn-success'

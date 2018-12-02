@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'dashboards#show'
+
+  resources :service_types
+
+  resources :houses, except: :index do
+    scope module: :houses do
+      resources :services, except: :index
+      resources :invoices
+    end
+  end
+  resource :dashboard, only: :show
 end
