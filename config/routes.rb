@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :service_types
 
-  resources :houses, except: :index do
+  resources :houses do
     scope module: :houses do
       resources :services, except: :index
       resources :invoices
