@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_01_180102) do
+ActiveRecord::Schema.define(version: 2018_12_12_182108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "areas", force: :cascade do |t|
+    t.integer "region_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["region_id"], name: "index_areas_on_region_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.integer "area_id"
+    t.integer "region_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_cities_on_area_id"
+    t.index ["region_id"], name: "index_cities_on_region_id"
+  end
 
   create_table "houses", force: :cascade do |t|
     t.string "address"
@@ -47,6 +65,12 @@ ActiveRecord::Schema.define(version: 2018_12_01_180102) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["house_id"], name: "index_owners_on_house_id"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "service_records", force: :cascade do |t|

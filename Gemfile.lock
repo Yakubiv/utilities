@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/zdennis/activerecord-import.git
+  revision: 0c9eeb3848a5011c3559ec498b3dcf88cb60fb36
+  specs:
+    activerecord-import (0.27.0)
+      activerecord (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -228,6 +235,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-import!
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
@@ -257,4 +265,4 @@ RUBY VERSION
    ruby 2.5.3p105
 
 BUNDLED WITH
-   1.17.1
+   1.17.2

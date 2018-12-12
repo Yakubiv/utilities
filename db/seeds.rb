@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-%w(internet electricity cold_water rent alarm_system monthly_pay hot_water gas).each do |service|
+%w(internet electricity cold_water rent alarm_system monthly_pay hot_water gas internet phone).each do |service|
   ServiceType.create(name_key: service)
 end

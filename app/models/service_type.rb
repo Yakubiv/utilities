@@ -1,4 +1,6 @@
 class ServiceType < ApplicationRecord
+  validates :name_key, uniqueness: true
+
   def self.human_name(key_value)
     I18n.t("#{model_name.i18n_key}.name.#{key_value}")
   end
