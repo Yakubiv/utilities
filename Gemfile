@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'meta-tags'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'activerecord-import', github: 'zdennis/activerecord-import'
+gem 'webpacker', '~> 3.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
