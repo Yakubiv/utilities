@@ -9,6 +9,7 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails', '~> 4.3.3'
+gem 'jquery-ui-rails'
 
 gem "font-awesome-rails"
 gem 'google-webfonts'
@@ -22,6 +23,7 @@ gem 'meta-tags'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'activerecord-import', github: 'zdennis/activerecord-import'
 gem 'webpacker', '~> 3.5'
+gem 'rails-jquery-autocomplete'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

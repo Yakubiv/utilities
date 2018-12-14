@@ -1,0 +1,22 @@
+- title t('title.pages.houses')
+
+= link_to 'Add house', new_house_path, class: 'btn btn-success'
+
+#houses-box
+  .row
+    - House.all.each do |house|
+      .col-md-4.col-sm-4.col-xs-12
+        %a{ href: house_path(house) }
+          .card.c-house-card
+            .card-body
+              .c-house-card__icon
+                %i.nc-icon.nc-square-pin
+              %h5.title= house.address
+            %hr
+            .button-container.mr-auto.ml-auto
+              %button{ href: "#", class: "btn btn-simple btn-link btn-icon" }
+                %i{ class: "fa fa-facebook-square" }
+              %button{ href: "#", class: "btn btn-simple btn-link btn-icon" }
+                %i{ class: "fa fa-facebook-square" }
+              %button{ href: "#", class: "btn btn-simple btn-link btn-icon" }
+                %i{ class: "fa fa-facebook-square" }

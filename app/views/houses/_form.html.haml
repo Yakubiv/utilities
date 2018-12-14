@@ -1,0 +1,11 @@
+= form_for @house do |f|
+  .row
+    .col-sm-6
+      .form-group
+        = f.label :city_id
+        = f.autocomplete_field :city_name, autocomplete_city_name_cities_path, { include_blank: t('house.city_id.placeholder') , required: true, class: 'form-control' }
+      .form-group
+        = f.label :address
+        = f.text_field :address, class: 'form-control'
+      .form-group
+        = f.submit 'Add', class: 'btn btn-success'

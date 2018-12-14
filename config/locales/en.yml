@@ -2,6 +2,15 @@ en:
   hello: "Hello world"
   brand:
     name: Utilities Pole
+  title:
+    pages:
+      houses: Houses
+      dashboard: Dashboard
+
+  activerecord:
+    attributes:
+      house:
+        address: Nickname
 
   service_type:
     name:
@@ -15,3 +24,7 @@ en:
       gas: Nature Gas
       internet: Internet
       phone: Mobile Payments
+
+  house:
+    city_id:
+      placeholder: Select Your City

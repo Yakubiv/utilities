@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'dashboards#show'
 
-  resources :service_types
+  resources :service_types, only: []
+  resources :cities, only: [] do
+    get :autocomplete_city_name, on: :collection
+  end
 
   resources :houses do
     scope module: :houses do
